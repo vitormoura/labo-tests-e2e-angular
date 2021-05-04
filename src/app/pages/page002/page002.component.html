@@ -1,0 +1,29 @@
+<h1>Http Requests</h1>
+
+<div id="cnt-search-form" [formGroup]="formGroup">
+  <input id="txt-search" type="search" formControlName="search" />
+  <button (click)="onSearchCountry()">Search</button>
+</div>
+
+<div id="cnt-search-results" *ngIf="searchResults.length > 0">
+  <h2>
+    Search results: <span id="txt-result-count">{{ searchResults.length }}</span>
+  </h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Capital</th>
+        <th>Population</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let c of searchResults">
+        <td>{{ c.name }}</td>
+        <td>{{ c.capital }}</td>
+        <td>{{ c.population }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
